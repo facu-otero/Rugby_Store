@@ -1,14 +1,14 @@
 
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <div>
 
-    <div>
+    
       <NavBar />
-    </div>
+    
     <h1 className="title"> Equipamiento de Rugby </h1>
     </div>
   );
