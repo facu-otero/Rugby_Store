@@ -3,13 +3,12 @@
     color: cornsilk;
     padding-top: 0%;
     margin-top: 0%;
-    z-index: 1000;    
-    display: flex;
-    
+    display: flex;    
 }
 .navbar img{
+    padding-left: 80%;
     height: 30px;
-    padding: 2rem;    
+    padding-top: 2rem;        
     float: right;
     text-align: right;
 }
