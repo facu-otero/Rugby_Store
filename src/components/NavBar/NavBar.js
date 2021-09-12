@@ -1,13 +1,13 @@
 import React from "react";
 import "./NavBar.css";
-import carrito from "../photos/icons/cart.png";
+import carrito from "../Photos/icons/cart.png";
 
 function NavBar() {
   return (
     
-    <div>
-      <h1 className="navbar">Rugby Store</h1>
-      <img src={carrito}/>
+    <div className="navbar">
+      <h1>Rugby Store</h1>
+      <img src={carrito} alt="carrito"/>
     </div>
   );
 }
