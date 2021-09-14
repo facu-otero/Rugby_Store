@@ -1,0 +1,16 @@
+.counter {
+  
+  text-align: center;
+  align-items: "center";
+  margin: "1rem 0";
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 300px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.counter > p{
+    text-align: center;
+
+}

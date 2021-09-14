@@ -1,16 +1,16 @@
-
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header/Header";
+import CardContainers from "./containers/CardContainers";
+import ItemCount from "./itemContainer/itemCount/ItemCount"
+
 function App() {
   return (
     <div>
-
-    
-      <NavBar/>
-    
-    <h1 className="title"> Equipamiento de Rugby </h1>
-    <Header name="Facundo" />
+      <NavBar />
+      <Header name="Facundo" />
+      <ItemCount />
+      <CardContainers />
     </div>
   );
 }

@@ -1,0 +1,46 @@
+.card {
+    width: 200px;
+    border: 1px solid black;
+    box-sizing: border-box;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    margin: 1rem 0.5rem;
+    text-align: center;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 50%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  /* .description {
+    margin: 1rem 0.5rem 0.5rem;
+  } */
+  .price {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0.5rem;
+    text-align: center;
+  }
+  .button {
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  .counter{
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+  }
