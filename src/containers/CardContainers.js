@@ -3,13 +3,14 @@ import Card from "../components/Card/Card";
 
 const CardContainers = () => {
   const [items, setItems] = React.useState([]);
+  const [cargando, setCargando] = React.useState(false);
   
   
   React.useEffect(() => {
-   
+    setCargando(true) 
     getProducts()
       .then((result) => setItems(result))
-      
+      .finally(() =>setCargando(false));
   }, []);
 
   const comprarProducto = (product) => {
@@ -18,14 +19,16 @@ const CardContainers = () => {
 
   const getProducts = () => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve(productos), 2000);
+      setTimeout(() => resolve(productos), 5000);
     });
   };
 
 
   return (
     <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-     {productos.map((producto) => {
+     {cargando && <p>...Cargando productos...</p>}
+     {items?.map((producto) => {
+       /* el ? es porque sino mientras los carga tira un error */
           return (
             <Card
               key={producto.id}
