@@ -7,6 +7,7 @@ function NavBar() {
     
     <div className="navbar">
       <h1>Rugby Store</h1>
+      
       <img src={carrito} alt="carrito"/>
     </div>
   );

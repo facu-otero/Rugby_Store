@@ -14,7 +14,7 @@ const ClickCounter = () => {
 
   return (
     <div className="counter">
-      <p>Cantidad: {counter}</p>
+      <p className="cantidad">Cantidad: {counter}</p>
       <br />
       <button onClick={addHandleClick}>Agregar Producto</button>
       <button onClick={quitHandleClick}>quitar Producto</button>
