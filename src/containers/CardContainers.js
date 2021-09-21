@@ -19,7 +19,7 @@ const CardContainers = () => {
 
   const getProducts = () => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve(productos), 5000);
+      setTimeout(() => resolve(productos), 2000);
     });
   };
 

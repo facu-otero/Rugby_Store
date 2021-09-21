@@ -1,0 +1,29 @@
+{
+"products":[
+{
+    "id":1,
+    "title":"Camiseta alternativa Jaguares",
+    "price":4500,
+    "description":"Esta es la escricion del producto",
+    "image":"https://d3ugyf2ht6aenh.cloudfront.net/stores/142/220/products/camiseta-alternativa-1080x10801-8f899bd6884ce59fd515759956377549-320-0.png"
+    
+  },  
+  { 
+    "id":2,
+    "title":"Camiseta Jaguares Niños (Stadium)",
+    "price":2500,
+    "description":"Esta es la escricion del producto",
+    "image":"https://d3ugyf2ht6aenh.cloudfront.net/stores/142/220/products/camiseta-jaguares-nino1-79c4a2f27bbda08a3115761773748584-320-0.png"
+    
+  },  
+    
+   {
+    "id":3,
+    "title":"Pechera hombrera Trilite V2 Gilbert",
+    "price":3400,
+    "description":"Esta es la escricion del producto",
+    "image":"https://d3ugyf2ht6aenh.cloudfront.net/stores/142/220/products/epauliere-rugby-trilite-v2-gilbert-jpg1-6ee8129ce5c943ac4315342692798722-320-0.png"
+    
+   }
+]
+}
