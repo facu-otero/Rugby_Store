@@ -1,16 +1,20 @@
+
 import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import Header from "./components/Header/Header";
-import CardContainers from "./containers/CardContainers";
+import Home from "./pages/Home";
+import Counter from "./pages/Counter";
 
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
-      <Header name="Facundo" />
-      <CardContainers />
-    </div>
+      <Switch>
+      <Route exact path="/" component = {Home}/>
+      <Route exact path="/counter" component = {Counter}/>
+      </Switch>    
+    </BrowserRouter>
   );
 }
 
