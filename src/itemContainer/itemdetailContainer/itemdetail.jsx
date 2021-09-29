@@ -1,48 +1,36 @@
-import * as React from 'react'
+import * as React from 'react';
+import {useParams} from "react-router-dom";
 
 
 
-const itemdetail = () => {
-    const [data, setData] = React.useState([]);
+const Itemdetail = () => {
+    const [product, setProduct] = React.useState({});
+    const {id} = useParams();
+    
     React.useEffect (() => {
-        const url = "http://localhost:3001/products";
-    fetch(url)
-    .then((response) => {
-        if(response.ok) {
-            return response.json();
-
-        } else { 
-            throw response;
-        }
-    })
-    .then((data) => setData(data))
-    .catch((error) => confirm.log(`Hubo un error ${error.status}`));
-    }, []);
+        
+    fetch(`http://localhost:3001/products/${id}`)
+    .then((response) => response.json())   
+    .then((data) => setProduct(data))
+    .catch((error) => console.log(`Hubo un error ${error.status}`));
+    }, [id]);
 
     return (
-        <div>
-            
-     {data?.map((product) => {
-       /* el ? es porque sino mientras los carga tira un error */
-          return (
-              
-              <p>
-              key={product.id}
-              title={product.title}              
-              image={product.image}
-              description={product.description}
-              price={product.price}
-              comprar={comprarProducto}
-              </p>
+                     
+              <div>
+             
+              <h1>Detalle de Producto</h1>
+              <h2>{product?.title}</h2>              
+              <img src= {product?.image} alt="imagen del producto"/>
+              <p>{product.description}</p>
+              <p>{product?.price}</p>
+              <button>comprar</button>
+              </div>
               
               
             
           );
-        })}
+        }
 
-            
-        </div>
-    )
-}
 
-export default itemdetail
+export default Itemdetail

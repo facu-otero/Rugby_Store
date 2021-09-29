@@ -1,6 +1,14 @@
 {
 "products":[
 {
+    "id":0,
+    "title":"Casco Gilbert Falcon",
+    "price":3500,
+    "description":"Esta es la escricion del producto",
+    "image":"https://d3ugyf2ht6aenh.cloudfront.net/stores/142/220/products/casco-falcon11-f54b21bf839bfbd07515964797547204-320-0.jpg"
+    
+  },  
+{
     "id":1,
     "title":"Camiseta alternativa Jaguares",
     "price":4500,
@@ -24,6 +32,23 @@
     "description":"Esta es la escricion del producto",
     "image":"https://d3ugyf2ht6aenh.cloudfront.net/stores/142/220/products/epauliere-rugby-trilite-v2-gilbert-jpg1-6ee8129ce5c943ac4315342692798722-320-0.png"
     
+   },
+   {
+    "id":4,
+    "title":"Botines Gilbert",
+    "price":10400,
+    "description":"Esta es la escricion del producto",
+    "image":"https://d3ugyf2ht6aenh.cloudfront.net/stores/142/220/products/botin-kaizer-nuevo-adelante1-10320da92bdbb4849015837636473715-50-0.jpg"
+    
    }
-]
+],
+
+
+
+"categories":[
+    {"id":0, "name": "Camisetas"},
+    {"id":1, "name": "Proteccion"},
+    {"id":2, "name": "Botines"}
+
+  ]
 }
