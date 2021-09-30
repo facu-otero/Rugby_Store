@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {useParams} from "react-router-dom";
-
+import ClickCounter from '../itemCount/ItemCount';
+import "./itemDetail.css"
 
 
 const Itemdetail = () => {
@@ -16,15 +17,14 @@ const Itemdetail = () => {
     }, [id]);
 
     return (
-                     
-              <div>
-             
+              <div className="container">
               <h1>Detalle de Producto</h1>
               <h2>{product?.title}</h2>              
               <img src= {product?.image} alt="imagen del producto"/>
               <p>{product.description}</p>
               <p>{product?.price}</p>
-              <button>comprar</button>
+              <ClickCounter>
+              </ClickCounter>
               </div>
               
               
