@@ -27,8 +27,6 @@ const Itemdetail = () => {
               </ClickCounter>
               </div>
               
-              
-            
           );
         }
 
