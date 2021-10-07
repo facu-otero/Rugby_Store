@@ -19,7 +19,7 @@ const ClickCounter = () => {
       <br />
       <button onClick={quitHandleClick}>-</button>
     </div>
-    <button>Comprar</button>
+    
     </>
   );
 };

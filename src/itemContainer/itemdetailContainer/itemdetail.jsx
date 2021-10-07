@@ -1,12 +1,14 @@
 import * as React from 'react';
 import {useParams} from "react-router-dom";
 import ClickCounter from '../itemCount/ItemCount';
-import "./itemDetail.css"
+import "./itemDetail.css";
+import {useCart} from "../../context/CartContext";
 
 
 const Itemdetail = () => {
     const [product, setProduct] = React.useState({});
     const {id} = useParams();
+    const { addItem} = useCart()
     
     React.useEffect (() => {
         
@@ -16,6 +18,9 @@ const Itemdetail = () => {
     .catch((error) => console.log(`Hubo un error ${error.status}`));
     }, [id]);
 
+    const addToCart = () =>{
+      addItem(product, 1);
+    };
     return (
               <div className="container">
               <h1>Detalle de Producto</h1>
@@ -25,6 +30,7 @@ const Itemdetail = () => {
               <p>{product?.price}</p>
               <ClickCounter>
               </ClickCounter>
+              <button onClick={addToCart}>Agregar al carrito</button>
               </div>
               
           );
