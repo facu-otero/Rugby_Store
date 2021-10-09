@@ -1,30 +1,30 @@
 import * as React from "react";
 import Card from "../components/Card/Card";
 
-const CardContainers = () => {
+const CardContainers = ({ selectedCategory }) => {
   const [data, setData] = React.useState([]);
   const [cargando, setCargando] = React.useState(false);
   const [error, setError] = React.useState(null);
-React.useEffect(()=>{
- const url = "http://localhost:3001/products";
-  fetch(url)
-  .then((response) =>{
-    if (response.ok) {
-      return response.json();
-    }else{
-      throw response;
-    }
-  })
-  .then((data)=> setData(data))
-  .catch((error)=> setError(error))
-  .finally(() => setCargando(false));
-},[]);
+  React.useEffect(() => {
+    const url = selectedCategory
+      ? `http://localhost:3001/products?categoryId=${selectedCategory}`
+      : `http://localhost:3001/products`;
+    fetch(url)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((data) => setData(data))
+      .catch((error) => setError(error))
+      .finally(() => setCargando(false));
+  }, [selectedCategory]);
 
   const comprarProducto = (product) => {
     console.log(`Has comprado el producto: ${product}`);
   };
-
-  
 
   return (
     <div style={{ display: "flex", justifyContent: "space-evenly" }}>
@@ -48,4 +48,3 @@ React.useEffect(()=>{
 };
 
 export default CardContainers;
-

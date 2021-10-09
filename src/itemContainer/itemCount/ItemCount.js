@@ -7,8 +7,13 @@ const ClickCounter = () => {
     setCounter((prevState) => prevState + 1);
   };
     const quitHandleClick = () => {
-     setCounter((prevState) => prevState - 1);
-  };
+      if (counter > 0) {
+       return setCounter((prevState) => prevState - 1);
+      }else{
+        setCounter((prevState) => prevState = 0)
+        
+    };
+    };
 
 
   return (
