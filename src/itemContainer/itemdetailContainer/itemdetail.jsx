@@ -1,14 +1,19 @@
 import * as React from 'react';
-import {useParams} from "react-router-dom";
-import ClickCounter from '../itemCount/ItemCount';
+import {useParams, Link} from "react-router-dom";
+import ItemCount from '../itemCount/ItemCount';
 import "./itemDetail.css";
-import {useCart} from "../../context/CartContext";
+import CartContext from "../../context/CartContext"
 
 
 const Itemdetail = () => {
     const [product, setProduct] = React.useState({});
     const {id} = useParams();
-    const { addItem} = useCart()
+    const [qty, setQty] = React.useState(0)
+    const {addItem} = React.useContext(CartContext)
+
+
+    
+    
     
     React.useEffect (() => {
         
@@ -18,9 +23,13 @@ const Itemdetail = () => {
     .catch((error) => console.log(`Hubo un error ${error.status}`));
     }, [id]);
 
-    const addToCart = () =>{
-      addItem(product, 1);
-    };
+    const onAdd = (quantityToAdd) => {
+      const qty = parseInt(quantityToAdd)
+      console.log('se agrego un item', product)
+      addItem(product, qty)
+      setQty(qty)
+  } 
+;
     return (
               <div className="container">
               <h1>Detalle de Producto</h1>
@@ -28,9 +37,14 @@ const Itemdetail = () => {
               <img src= {product?.image} alt="imagen del producto"/>
               <p>{product.description}</p>
               <p>{product?.price}</p>
-              <ClickCounter>
-              </ClickCounter>
-              <button onClick={addToCart}>Agregar al carrito</button>
+              { qty === 0 ?
+                    (product.title && <ItemCount onAdd={onAdd} />)
+                        :
+                    <Link to='/cart' >
+                        <button >Terminar mi compra</button>
+                    </Link> 
+                }
+
               </div>
               
           );
