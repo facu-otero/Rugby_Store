@@ -13,12 +13,12 @@ const Card = ({ title, quitar, productId, image, comprar, price, counter }) => {
       </div>
       {/* <p className={styles.description}>{description}</p> */}
       <p className={styles.price}>$ {price}</p>
-      <button
+{/*       <button
         className={styles.button}
         onClick={(addProduct) => comprar(title)}
       >
         Agregar al carrito
-      </button>
+      </button> */}
       {/* <button
         className={styles.button}
         onClick={(quitProduct) => quitar(title)}

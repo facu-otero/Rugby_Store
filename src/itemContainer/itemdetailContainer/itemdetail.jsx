@@ -9,7 +9,7 @@ const Itemdetail = () => {
     const [product, setProduct] = React.useState({});
     const {id} = useParams();
     const [qty, setQty] = React.useState(0)
-    const {addItem} = React.useContext(CartContext)
+    const {addItem, cart} = React.useContext(CartContext)
 
 
     
@@ -26,6 +26,9 @@ const Itemdetail = () => {
     const onAdd = (quantityToAdd) => {
       const qty = parseInt(quantityToAdd)
       console.log('se agrego un item', product)
+      console.log(cart)
+
+      
       addItem(product, qty)
       setQty(qty)
   } 
