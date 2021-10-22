@@ -21,12 +21,14 @@ function NavBar() {
           </li>
         </ul>
       </div>
+      <Link to="/cart">
       <div className="cart">
         {
           cart.length !== 0 && <h5>{cart.length}</h5>
         }
         <img src={carrito} alt="carrito" />
       </div>
+      </Link>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+
+
+.cartContainer{
+    border : 1px solid black;
+    box-sizing: border-box;
+    margin: 2rem;
+    text-align: center;
+    flex-direction: column;
+}    
