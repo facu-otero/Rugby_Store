@@ -1,8 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-
-
-
+console.log("pruebo valores de firebase",process.env.REACT_APP_API_KEY)
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_API_AUTH_DOMAIN,
@@ -11,11 +9,7 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_API_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_API_APP_ID,
 };
-const app = firebase.initilizeApp(firebaseConfig);
-
+const app = firebase.initializeApp(firebaseConfig);
 export const getFirebase=()=>app;
-
 //Servicios
-export const getFirestore=()=>firebase.forestore(app);
-
-
+export const getFirestore=()=>firebase.firestore(app);
