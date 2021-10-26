@@ -2,7 +2,7 @@ import * as React from "react";
 import Card from "../components/Card/Card";
 import { getFirestore } from "../firebase";
 
-const CardContainers = ({  }) => {
+const CardContainers = () => {
   const [data, setData] = React.useState([]);
   const [cargando, setCargando] = React.useState(false);
   const [error, setError] = React.useState(null);
@@ -10,10 +10,19 @@ const CardContainers = ({  }) => {
 React.useEffect(()=>{
   const db = getFirestore();
   const productsCollection = db.collection("products");
+  setCargando(true);
   productsCollection
   .get()
-  .then((querySnapshot)=> console.log(querySnapshot))
-  .catch(()=>{});
+  .then((querySnapshot)=> {
+    if (querySnapshot.empty){
+      console.log("no hay productos");
+    }else{
+setData(querySnapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()})));
+    
+    }
+  })
+  .catch((error) => setError(error))
+  .finally(() => setCargando(false));
 
 },[]);
 
