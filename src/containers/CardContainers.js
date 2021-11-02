@@ -53,8 +53,8 @@ setData(querySnapshot.docs.map((doc)=> ({id: doc.id, ...doc.data()})));
 };
 
 export default CardContainers;
-
-/*   React.useEffect(() => {
+/* 
+  React.useEffect(() => {
     const url = selectedCategory
       ? `http://localhost:3001/products?categoryId=${selectedCategory}`
       : `http://localhost:3001/products`;
